@@ -46,3 +46,51 @@ Add to the `plugins` array in `registry.json`:
 - Accepted plugins show a **Verified** indicator in the app — the registry is curated, not just a listing
 
 Users can always install their own plugins locally without going through the registry. The registry exists to surface plugins that the maintainers have confirmed are compatible and add value to the ecosystem.
+
+## Submission Terms
+
+By submitting a plugin to the community registry, you agree to the following:
+
+### Purpose Stability
+
+The stated purpose and description of your plugin at the time of submission is what was verified. If the plugin's purpose fundamentally changes after acceptance, it must be re-submitted for review. Changing a "project management" plugin into a "data scraping" tool without re-verification will result in removal from the registry.
+
+### Breaking Changes Require Re-verification
+
+Any release that introduces breaking changes must be flagged to the maintainers before publication. Breaking changes include:
+
+- Changing or removing artifact types or relationship keys
+- Changing the semantic intent of existing relationships
+- Removing functionality that users depend on
+- Changing the plugin's license to something more restrictive
+
+Submit a PR updating your `registry.json` entry with the new version. The maintainers will re-verify compatibility before the update is accepted.
+
+### Ethical Use Alignment
+
+Plugins in the registry must not be designed to facilitate harm to individuals or communities. Plugins that violate the principles of the [Ethical Use Addendum](https://github.com/orqastudio/orqastudio-dev/blob/main/app/CHANGE-LICENSE) — including discrimination based on race, ethnicity, gender, gender identity, sexual orientation, disability, or any other protected characteristic — will be removed immediately.
+
+### Maintenance Expectations
+
+- Plugins should respond to compatibility issues within a reasonable timeframe
+- If a plugin becomes unmaintained and causes issues for users, the maintainers may mark it as deprecated or remove it from the registry
+- Archived or abandoned plugins will be flagged with a warning indicator in the app
+
+### Relationship Key Collisions
+
+If your plugin declares relationship or artifact type keys that collide with core or other registered plugins, the collision will be reviewed during the PR process. You may be asked to rename keys or confirm that the intent matches the existing definition. See [Plugin Collision Detection](https://github.com/orqastudio/orqastudio-dev/blob/main/.orqa/documentation/platform/plugin-manifest-schema.md) for details.
+
+### Removal
+
+The maintainers reserve the right to remove any plugin from the registry at any time for:
+- Ethical use violations
+- Undisclosed breaking changes
+- Prolonged incompatibility with current platform versions
+- Misrepresentation of purpose or capabilities
+- Abandonment causing harm to users
+
+Removal from the registry does not affect users who have already installed the plugin locally.
+
+### Intellectual Property
+
+You retain full ownership and copyright of your plugin. Listing in the registry does not transfer any rights to the OrqaStudio project. The registry entry (name, description, metadata in `registry.json`) is licensed under MIT as part of the registry index.
