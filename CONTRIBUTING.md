@@ -34,6 +34,7 @@ Add to the `plugins` array in `registry.json`:
   "version": "1.0.0",
   "releaseTag": "v1.0.0",
   "sha256": "abc123...",
+  "image": "https://github.com/yourorg/your-repo/blob/main/assets/plugin-card.png?raw=1",
   "category": "ai-provider|workflow|integration|custom",
   "icon": "lucide-icon-name",
   "capabilities": ["sidecar", "hooks", "cli-tools", "views", "widgets"],
